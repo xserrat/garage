@@ -1,0 +1,29 @@
+version: "2"
+services:
+  server:
+    image: node:boron
+    ports:
+      - "3001:3001"
+    volumes:
+      - "./server:/app"
+    environment:
+      PORT: 3001
+    working_dir: /app
+    command: "npm start"
+    depends_on:
+      - mongo
+  client:
+    image: node:boron
+    ports:
+      - "3000:3000"
+    volumes:
+        - "./client:/app"
+    working_dir: /app
+    command: "npm start"
+    depends_on:
+      - server
+
+  mongo:
+    image: mongo:3.4.9
+    ports:
+      - "27017:27017"
