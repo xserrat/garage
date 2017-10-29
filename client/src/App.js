@@ -8,7 +8,8 @@ class App extends Component {
   componentDidMount() {
     fetch('/users')
       .then(res => res.json())
-      .then(users => this.setState({ users }));
+      .then(users => this.setState({ users }))
+      //.catch(error => this.setState({ [] }))
   }
 
   render() {
