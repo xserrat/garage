@@ -1,3 +1,3 @@
 # GarageApp
 
-Start nodejs backend app by running `PORT=3001 node bin/www`. Then start react client app by running: `npm start` inside `client` folder.
+To start this app you only need to execute `docker-compose up -d`
